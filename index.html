@@ -1,0 +1,104 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="image/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <title>This Is For You</title>
+</head>
+
+<body>
+    <div class="content">
+        <h1>Hallo Cantik</h1>
+        <img src="image/sicantik.jpeg" alt="Si Cantik">
+        <p>First of all I thanks to Nenek, which has bring me to this beautiful woman.
+            At first we got to know each other in the Discord application,
+            and in the end we meet in your home on March 5, 2021.
+            At that time I was happy to meet and get to know you in person<br>
+            It's you Gebboy.<br>
+            and I want you to press the button.</p>
+
+        <div class="tombol">
+            <button class="buttonAlert">Click Me</button>
+        </div>
+    </div>
+    <div class="footer">
+        Copyright &copy; 2021 | Made with &hearts; by <a href="https://www.instagram.com/aldi04_/"
+            target="_blank">Muhammad Jumialdi</a>
+    </div>
+
+    <script src="script/sweetalert2.all.min.js"></script>
+    <script>
+        document.querySelector(".buttonAlert").addEventListener('click', function () {
+            Swal.mixin({
+                confirmButtonText: 'Next',
+            }).queue([
+                {
+                    text: 'Hi Cantik. Kita mulai kali yee',
+                    icon: 'info',
+                    confirmButtonText: 'Iyee'
+                },
+                {
+                    text: 'Udeh siap kan ?',
+                    icon: 'question',
+                    confirmButtonText: 'Iyee',
+                    showCancelButton: true,
+                    cancelButtonText: 'Nggak',
+                },
+                {
+                    text: 'Kamu sayang ga sama Aku ?',
+                    icon: 'question',
+                    confirmButtonText: 'Iyee',
+                    showCancelButton: true,
+                    cancelButtonText: 'Nggak',
+                },
+                {
+                    text: 'Aku juga sayang sama kamu <3 eaaaa',
+                    icon: 'success',
+                    confirmButtonText: 'Next',
+                },
+                {
+                    text: 'Kamu kangen ga sama Aku ?',
+                    icon: 'question',
+                    confirmButtonText: 'Iyee',
+                    showCancelButton: true,
+                    cancelButtonText: 'Nggak',
+                },
+                {
+                    text: 'Aku juga kangen banget sama kamu <3 eaaaa',
+                    icon: 'success',
+                    confirmButtonText: 'Next',
+                },
+                {
+                    icon: 'question',
+                    input: 'range',
+                    inputLabel: 'Seberapa sayang kamu ke aku. dari 1 - 100 yaa.',
+                    inputAttributes: {
+                        min: 1,
+                        max: 100,
+                        step: 1
+                    },
+                    inputValue: 1,
+                    preConfirm: function (value) {
+                        Swal.insertQueueStep({
+                            type: 'question',
+                            icon: 'success',
+                            confirmButtonText: 'Next',
+                            text: 'Makasih yaa Kamu udah sayang sama aku sebanyak ' + value + '%',
+                        })
+                    },
+                },
+            ]).then((result) => {
+                Swal.fire({
+                    title: 'JANGAN PERNAH TINGGALIN AKOH!!!',
+                    confirmButtonText: 'I LOVE U !!!'
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
